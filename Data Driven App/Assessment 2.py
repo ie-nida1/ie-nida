@@ -17,8 +17,12 @@ def page2():
 # Function to display the page3
 def page3():
     switch_to_frame(frame3)  
+
+def page4():
+    switch_to_frame(frame4)
     
-# Function to get information on countries
+def page5():
+    switch_to_frame(frame5)
 
 # Function to get information on countries
 def app_country_info():
@@ -161,6 +165,7 @@ flag_button.pack(pady=10)
 # The end of frame 2
 frame2.place(x=0 , y=0, width=530, height=300)
 
+# Frame 3
 frame3 = tk.Frame(root)
 
 img_bg = ImageTk.PhotoImage(Image.open("bg.png"))# Image for frame 2 background
@@ -198,6 +203,7 @@ paragraph = (
 Text = ttk.Label(container_frame2, text=paragraph, font=("Comic Sans MS", 9, "bold"),foreground="#af8756", wraplength=260, justify=tk.LEFT)
 Text.pack(side="left", fill="both", expand=True)
 
+# The end of frame 3
 frame3.place(x=0 , y=0, width=530, height=300)
 
 # Frame 4
@@ -213,6 +219,7 @@ B4.place(x=0, y=0, width=30, height=30)
 L2 = ttk.Label(frame4, text="Input Country Code:", font=("Comic Sans MS", 14, 'bold'), background="#e5d3ac", foreground="#a06418")
 L2.pack(pady=10)
 
+# API LINK
 api_link = "https://restcountries.com/v3.1/all"
 response = requests.get(api_link)
 response.raise_for_status()
@@ -227,7 +234,6 @@ country = ttk.Combobox(frame4, values=country_names)
 country.place(x=190, y=50)  # Adjusted the position
 country.bind("<<ComboboxSelected>>", select)
 
-# Button for Country Info
 B5 = tk.Button(frame4, text="Country Info", font=('Comic Sans MS', 10, 'bold italic'), fg="white", bg="#d7b180", command=app_country_info)
 B5.place(x=215, y=80)  # Adjusted the position
 
@@ -235,7 +241,7 @@ B5.place(x=215, y=80)  # Adjusted the position
 container_frame4 = ttk.Frame(frame4)
 container_frame4.place(x=120, y=130, width=300, height=150)  # Adjusted the width and height
 
-# Scrollbar for the container_frame4
+# Scrollbar 
 scrollbar = ttk.Scrollbar(container_frame4)
 scrollbar.pack(side="right", fill="y")
 
@@ -244,10 +250,10 @@ result_content_text = tk.Text(container_frame4, wrap=tk.WORD, height=10, width=4
 result_content_text.pack(side="left", fill="both", expand=True)
 scrollbar.config(command=result_content_text.yview)
 
+# The end of frame 4
 frame4.place(x=0, y=0, width=530, height=300)
 
-
-
+# Frame 5
 frame5 = tk.Frame(root)
 
 L3 = ttk.Label(frame5, text="Flags", font=("Comic Sans MS", 14, 'bold'), background="#e5d3ac", foreground="#a06418")
@@ -262,6 +268,7 @@ B5 = tk.Button(frame5, text="🢦",font=('Arial',25),fg="white", bg="#d7b180", c
 B5.place(x=0, y=0, width=30, height=30)
 flag = ttk.Label(frame5)
 
+# The end of frame 5
 frame5.place(x=0 , y=0, width=530, height=300)
 
 switch_to_frame(frame1)
