@@ -184,7 +184,7 @@ style.configure("color.TFrame", background="#cc947a")
 
 # A container frame for frame 2
 container_frame2 = ttk.Frame(frame3, style="color.TFrame", padding=(20, 20, 20, 20))
-container_frame2.place(x=105, y=0, width=300, height=300)
+container_frame2.place(x=50, y=100, width=300, height=300)
 
 # Label and the font
 L1 = tk.Label(frame3, text="API Information", font=("Comic Sans MS", 11, "bold italic"),fg='#a06418')
